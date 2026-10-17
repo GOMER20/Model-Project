@@ -3,27 +3,29 @@
 ## About
 
 Model Project is a small electronic trading world that we built from scratch,
-in three parts that work together. **HFT** (Project 1) is the matching engine
-at the heart of an exchange: a C++20 limit order book that matches buy and
-sell orders by price, then time, in about 20 nanoseconds, and can record a
-whole trading session and replay it exactly. **Gomer Trading** (Project 2) is
-the exchange people actually use: a Sterling-Pro-style paper trading platform
-with a professional terminal, trading competitions with live leaderboards and
-a declared winner, a bot gateway for trading programs, an in-memory engine
-that answers an order in about a tenth of a millisecond, a practice market
-that keeps real US exchange hours, and a macOS app that can share itself with
-traders anywhere. **AT** (Project 3) is a trader that is not a person: a
-Python algorithm whose strategy was researched and stress-tested on Gomer
-Trading's market, then let loose to trade on it live, explaining every losing
-trade after each session. The three are connected: AT trades on Gomer Trading
-through its gateway, Gomer Trading feeds every price and order to HFT, and
-Gomer Trading's Test Lab shows how AT and HFT are doing, side by side.
+in three parts that work together. **High-Frequency Trading** (Project 1,
+called HFT inside the app) is the matching engine at the heart of an exchange:
+a C++20 limit order book that matches buy and sell orders by price, then time,
+in about 20 nanoseconds, and can record a whole trading session and replay it
+exactly. **Gomer Trading** (Project 2) is the exchange people actually use: a
+Sterling-Pro-style paper trading platform with a professional terminal,
+trading competitions with live leaderboards and a declared winner, a bot
+gateway for trading programs, an in-memory engine that answers an order in
+about a tenth of a millisecond, a practice market that keeps real US exchange
+hours, and a macOS app that can share itself with traders anywhere.
+**Algorithmic Trading** (Project 3, whose trading bot is called AT) is a
+trader that is not a person: a Python algorithm whose strategy was researched
+and stress-tested on Gomer Trading's market, then let loose to trade on it
+live, explaining every losing trade after each session. The three are
+connected: AT trades on Gomer Trading through its gateway, Gomer Trading feeds
+every price and order to HFT, and Gomer Trading's Test Lab shows how AT and
+HFT are doing, side by side.
 
 | | Project | Folder here | Language | What it is |
 |---|---|---|---|---|
-| 1 | [**HFT — Low-Latency Order Book**](https://github.com/GOMER20/Project-1-Low-Latency-Order-Book) | [`Project-1-HFT-Order-Book`](Project-1-HFT-Order-Book) | C++20 | The matching engine: the data structure at the heart of an exchange, matching orders by price, then time, in about 20 nanoseconds |
+| 1 | [**High-Frequency Trading**](https://github.com/GOMER20/Project-1-High-Frequency-Trading) | [`Project-1-High-Frequency-Trading`](Project-1-High-Frequency-Trading) | C++20 | The matching engine: the data structure at the heart of an exchange, matching orders by price, then time, in about 20 nanoseconds |
 | 2 | [**Gomer Trading**](https://github.com/GOMER20/Project-2-Gomer-Trading) | [`Project-2-Gomer-Trading`](Project-2-Gomer-Trading) | TypeScript (Node.js, Next.js, Electron) | The exchange people use: a Sterling-Pro-style trading terminal and competition platform, as a macOS app and a web server |
-| 3 | [**AT — Algorithmic Trading**](https://github.com/GOMER20/Project-3-AT-Algorithmic-Trading) | [`Project-3-AT-Algorithmic-Trading`](Project-3-AT-Algorithmic-Trading) | Python | The trader that is not a person: a researched strategy, a backtester that tries hard to prove it wrong, and a bot that trades live on Gomer Trading |
+| 3 | [**Algorithmic Trading**](https://github.com/GOMER20/Project-3-Algorithmic-Trading) | [`Project-3-Algorithmic-Trading`](Project-3-Algorithmic-Trading) | Python | The trader that is not a person: a researched strategy, a backtester that tries hard to prove it wrong, and a bot that trades live on Gomer Trading |
 
 Each folder holds that project's code, the versions that work together. Each
 project also has its own repository (linked above), where its full history
@@ -40,19 +42,19 @@ people, only faster, and trade by rules instead of by eye.
 
 The Model Project builds one of each, from scratch, and connects them:
 
-- **Gomer Trading** (Project 2) is the venue. Traders get a $100,000 paper
-  account in a competition and trade on a professional terminal: charts,
+- **Gomer Trading** (Project 2) is the venue. Traders get a paper account in a
+  competition ($100,000 by default, or any amount the organiser chooses) and trade on a professional terminal: charts,
   Level 2 depth, bracket orders, margin calls, a live leaderboard and a
   declared winner. It runs as a macOS app on one Mac and can share itself with
   traders anywhere at a permanent internet address. Its prices come from a
   realistic built-in practice market that keeps US exchange hours, or from a
   real-time data feed when a key is added.
-- **AT** (Project 3) is a trading program. It was researched and tested
+- **Algorithmic Trading** (Project 3) is a trading program, called AT. It was researched and tested
   against Gomer Trading's own market, then admitted to the exchange as a bot
   with its own API key. It signs in through Gomer Trading's bot gateway at the
   opening bell, trades its strategy, and after every session writes a report
   that explains each losing trade.
-- **HFT** (Project 1) is the engine. It runs beside Gomer Trading in test
+- **High-Frequency Trading** (Project 1) is the engine, called HFT. It runs beside Gomer Trading in test
   mode: the exchange sends it a copy of every price and every order, HFT
   matches them in a real order book of its own and measures itself, and each
   session is recorded so it can be replayed exactly.
@@ -79,8 +81,8 @@ flowchart LR
         market --> engine
     end
 
-    p3["Project 3 · AT<br/>Python trading algorithm"]
-    p1["Project 1 · HFT<br/>C++ order book engine"]
+    p3["Project 3 · Algorithmic Trading<br/>AT, the Python trading algorithm"]
+    p1["Project 1 · High-Frequency Trading<br/>HFT, the C++ order book engine"]
 
     people --> terminal
     p3 -- "orders in, fills and prices out" --> gateway
@@ -110,7 +112,7 @@ and reported results plainly, including the ones that did not go as hoped.
 | 11 Oct | HFT embedded in Gomer Trading in test mode, with recordings kept within a fixed disk budget. |
 | 12 Oct | AT's loss review: what the losing trades had in common, new filters, a second walk-forward. |
 | 14–15 Oct | AT starts itself at the opening bell; trades in its own long-running sandbox and on the Demo Trading Challenge leaderboard. |
-| 17 Oct | The Test Lab with AT and HFT windows; all three projects published, and this overview. |
+| 17 Oct | The Test Lab with AT and HFT windows; starting money of any amount, changeable while a competition runs; all three projects published, and this overview. |
 
 ## Results so far
 
