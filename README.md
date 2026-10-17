@@ -1,23 +1,33 @@
 # Model Project
 
-**Three projects that together make a small electronic trading world: an
-exchange engine, an exchange people trade on, and an algorithm that trades on
-it.** Each one is a complete project in its own repository. This repository
-ties them together and explains how they fit.
+## About
 
-| | Project | Language | What it is |
-|---|---|---|---|
-| 1 | [**HFT — Low-Latency Order Book**](https://github.com/GOMER20/Project-1-Low-Latency-Order-Book) | C++20 | The matching engine: the data structure at the heart of an exchange, matching orders by price, then time, in about 20 nanoseconds |
-| 2 | [**Gomer Trading**](https://github.com/GOMER20/Project-2-Gomer-Trading) | TypeScript (Node.js, Next.js, Electron) | The exchange people use: a Sterling-Pro-style trading terminal and competition platform, as a macOS app and a web server |
-| 3 | [**AT — Algorithmic Trading**](https://github.com/GOMER20/Project-3-AT-Algorithmic-Trading) | Python | The trader that is not a person: a researched strategy, a backtester that tries hard to prove it wrong, and a bot that trades live on Gomer Trading |
+Model Project is a small electronic trading world that we built from scratch,
+in three parts that work together. **HFT** (Project 1) is the matching engine
+at the heart of an exchange: a C++20 limit order book that matches buy and
+sell orders by price, then time, in about 20 nanoseconds, and can record a
+whole trading session and replay it exactly. **Gomer Trading** (Project 2) is
+the exchange people actually use: a Sterling-Pro-style paper trading platform
+with a professional terminal, trading competitions with live leaderboards and
+a declared winner, a bot gateway for trading programs, an in-memory engine
+that answers an order in about a tenth of a millisecond, a practice market
+that keeps real US exchange hours, and a macOS app that can share itself with
+traders anywhere. **AT** (Project 3) is a trader that is not a person: a
+Python algorithm whose strategy was researched and stress-tested on Gomer
+Trading's market, then let loose to trade on it live, explaining every losing
+trade after each session. The three are connected: AT trades on Gomer Trading
+through its gateway, Gomer Trading feeds every price and order to HFT, and
+Gomer Trading's Test Lab shows how AT and HFT are doing, side by side.
 
-The folders above (`Project-1-HFT-Order-Book`, `Project-2-Gomer-Trading`,
-`Project-3-AT-Algorithmic-Trading`) are links to those repositories at the
-exact versions that work together. To get all three at once:
+| | Project | Folder here | Language | What it is |
+|---|---|---|---|---|
+| 1 | [**HFT — Low-Latency Order Book**](https://github.com/GOMER20/Project-1-Low-Latency-Order-Book) | [`Project-1-HFT-Order-Book`](Project-1-HFT-Order-Book) | C++20 | The matching engine: the data structure at the heart of an exchange, matching orders by price, then time, in about 20 nanoseconds |
+| 2 | [**Gomer Trading**](https://github.com/GOMER20/Project-2-Gomer-Trading) | [`Project-2-Gomer-Trading`](Project-2-Gomer-Trading) | TypeScript (Node.js, Next.js, Electron) | The exchange people use: a Sterling-Pro-style trading terminal and competition platform, as a macOS app and a web server |
+| 3 | [**AT — Algorithmic Trading**](https://github.com/GOMER20/Project-3-AT-Algorithmic-Trading) | [`Project-3-AT-Algorithmic-Trading`](Project-3-AT-Algorithmic-Trading) | Python | The trader that is not a person: a researched strategy, a backtester that tries hard to prove it wrong, and a bot that trades live on Gomer Trading |
 
-```bash
-git clone --recurse-submodules https://github.com/GOMER20/Model-Project.git
-```
+Each folder holds that project's code, the versions that work together. Each
+project also has its own repository (linked above), where its full history
+lives.
 
 ## Overview
 

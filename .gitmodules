@@ -1,9 +1,0 @@
-[submodule "Project-1-HFT-Order-Book"]
-	path = Project-1-HFT-Order-Book
-	url = https://github.com/GOMER20/Project-1-Low-Latency-Order-Book.git
-[submodule "Project-2-Gomer-Trading"]
-	path = Project-2-Gomer-Trading
-	url = https://github.com/GOMER20/Project-2-Gomer-Trading.git
-[submodule "Project-3-AT-Algorithmic-Trading"]
-	path = Project-3-AT-Algorithmic-Trading
-	url = https://github.com/GOMER20/Project-3-AT-Algorithmic-Trading.git
